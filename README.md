@@ -28,6 +28,88 @@ We developed tests to check the correctness of the implementation, validate impo
 
 The tests also help verify that the original implementation remains unchanged where required and that the extended implementation behaves consistently with the baseline in the zero-delay case.
 
+## Reproducing the Experiments
+
+This section explains how to run the tests and experiments included in this repository.
+
+### 1. Install Dependencies
+
+Clone the repository and enter the project directory:
+
+```bash
+git clone https://github.com/sakeel-khan/Safety-Monitoring-for-LECPS.git
+cd Safety-Monitoring-for-LECPS
+```
+
+Install the required Python packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+### 2. Run the Tests
+
+Run the complete test suite using:
+
+```bash
+python -m pytest -v
+```
+
+To run individual test files:
+
+```bash
+python -m pytest test_acp.py -v
+python -m pytest test_acp_coverage.py -v
+python -m pytest test_acp_lag_aware.py -v
+python -m pytest test_stl.py -v
+```
+
+The tests check the implementation, validate important properties, and examine the behaviour of the lag-aware ACP extension.
+
+### 3. Run the Experiments
+
+The repository includes scripts for evaluating ACP, studying delayed predictions, and exploring additional experimental scenarios.
+
+Run the relevant scripts from the project directory:
+
+| Experiment | Script |
+|---|---|
+| ACP coverage evaluation | `acp_coverage.py` |
+| Synthetic experiments | `synthetic.py` |
+| Lag-aware ACP comparison | `compare_lag_aware_acp.py` |
+| LiDAR range case study | `case_study_i_lidar_range.py` |
+| Vehicle-count case study | `case_study_ii_vehicle_count.py` |
+| Lemma 1 results | `lemma1_table.py` |
+
+For example, to run the lag-aware ACP comparison:
+
+```bash
+python compare_lag_aware_acp.py
+```
+
+To run the LiDAR range case study:
+
+```bash
+python case_study_i_lidar_range.py
+```
+
+To run the vehicle-count case study:
+
+```bash
+python case_study_ii_vehicle_count.py
+```
+
+### 4. Experimental Outputs
+
+The experiments are intended to examine coverage, threshold adaptation, delayed prediction evaluation, and the effect of changing experimental conditions.
+
+Depending on the script, results may be printed in the terminal or saved as data files and plots. Check each script for its output filenames and save locations.
+
+### 5. Reproducibility
+
+Run the experiments from the repository's root directory and use the same configuration when comparing different methods. Keep the generated results so that the behaviour of the baseline and extended implementations can be compared.
+
+The tests and experiments provide a way to validate the implementation and investigate the proposed extensions under different conditions.
 ## Our Extensions and New Ideas
 
 ### 1. Lag-Aware Adaptive Conformal Prediction
