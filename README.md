@@ -91,10 +91,6 @@ To run an experiment, execute its corresponding Python script. For example:
 python acp_coverage.py
 ```
 
-```bash
-python gamma_comparison.py
-```
-
 The exact scripts available depend on the files included in the repository.
 
 ## Key Contributions
