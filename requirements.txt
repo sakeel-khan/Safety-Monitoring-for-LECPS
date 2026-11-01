@@ -1,0 +1,5 @@
+# Dependencies for Safety-Monitoring-for-LECPS #
+numpy
+matplotlib
+pandas
+pytest
